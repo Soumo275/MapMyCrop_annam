@@ -1,9 +1,11 @@
 Flask
-Flask-SQLAlchemy
-Flask-Cors
+flask_sqlalchemy
+flask_cors
 python-dotenv
+supabase
 rasterio
 numpy
+requests
+Pillow
+keras
 psycopg2-binary
-supabase
-
