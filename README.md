@@ -109,8 +109,8 @@ python app/app.py
 ```
 
 The app will be accessible at `http://localhost:5000/`.
+<hr><br>
 
-<br>
 # Java Swing Tool
 
 A standalone desktop application developed in **Java** for estimating agricultural yield based on user-supplied yield values and classified acreage data.
