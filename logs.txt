@@ -1,9 +1,310 @@
 ##  docker logs 
 
 
+Concluded at
+18.07.2025 19:07:49
+Duration
+42s
+Stage
+Using external buildkit service
+Downloading source code
+Git LFS initialized.
+[Start] Downloading source code from https://github.com/Soumo275/MapMyCrop_annam
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+Initialized empty Git repository in /mnt/tfy/source-code/.git/
+From https://github.com/Soumo275/MapMyCrop_annam
+ * branch            6f45eb34fa29289f02ca54fa0f6a76e46286f8be -> FETCH_HEAD
+HEAD is now at 6f45eb3 deployment update
+Time taken to download the source code: 0 seconds
+[Done] Download code completed
+Logging into registry: tfyiitrazreg.azurecr.io
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+ 
+Login Succeeded
+waiting for builder
+Port is open. Continuing build...
+[Start] Building and pushing the docker container. Please find the logs below
+[==== Docker logs start ====]
+remote-kubernetes
+[build] TrueFoundry CLI version: 0.11.2
+[07/18/25 13:37:28] INFO     Dockerfile content:-                               
+                    INFO     FROM python:3.10-slim                              
+                                                                                
+                             WORKDIR /app                                       
+                                                                                
+                             COPY requirements.txt .                            
+                                                                                
+                             RUN pip install --no-cache-dir -r requirements.txt 
+                                                                                
+                             COPY . .                                           
+                                                                                
+                             ENV PORT=8080                                      
+                                                                                
+                             EXPOSE 8080                                        
+                                                                                
+                             CMD ["python", "app.py"]                           
+                    INFO     Starting docker build...                           
+#0 building with "remote-kubernetes" instance using remote driver
+ 
+#1 [internal] load build definition from dockerfile
+#1 transferring dockerfile: 268B done
+#1 DONE 0.0s
+ 
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 ...
+ 
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+ 
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 0.6s
+ 
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+ 
+#5 [internal] load build context
+#5 DONE 0.0s
+ 
+#6 [1/5] FROM docker.io/library/python:3.10-slim@sha256:9dd6774a1276178f94b0cc1fb1f0edd980825d0ea7634847af9940b1b6273c13
+#6 resolve docker.io/library/python:3.10-slim@sha256:9dd6774a1276178f94b0cc1fb1f0edd980825d0ea7634847af9940b1b6273c13 done
+#6 DONE 0.0s
+ 
+#7 importing cache manifest from tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:cache-latest
+#7 ...
+ 
+#8 [auth] tfy-ws-5b-1-map-my-crop-5efba:pull token for tfyiitrazreg.azurecr.io
+#8 DONE 0.0s
+ 
+#7 importing cache manifest from tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:cache-latest
+#7 ERROR: failed to configure registry cache importer: tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:cache-latest: not found
+ 
+#6 [1/5] FROM docker.io/library/python:3.10-slim@sha256:9dd6774a1276178f94b0cc1fb1f0edd980825d0ea7634847af9940b1b6273c13
+#6 DONE 0.0s
+ 
+#5 [internal] load build context
+#5 transferring context: 58.79kB done
+#5 DONE 0.0s
+ 
+#9 [2/5] WORKDIR /app
+#9 CACHED
+ 
+#10 [3/5] COPY requirements.txt .
+#10 CACHED
+ 
+#11 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#11 CACHED
+ 
+#12 [5/5] COPY . .
+#12 DONE 0.0s
+ 
+#13 [auth] tfy-ws-5b-1-map-my-crop-5efba:pull,push token for tfyiitrazreg.azurecr.io
+#13 DONE 0.0s
+ 
+#14 exporting to image
+#14 exporting layers 0.0s done
+#14 exporting manifest sha256:fe4cc9757e112e4a8d05252fe8fb5d3c4e40bf0deee3cb753ee9426e2da30eb5 done
+#14 exporting config sha256:fb16c97dcc19cbdfdec29354bde3b885aecf06bd0fecb580219d71634e5b6064 done
+#14 exporting attestation manifest sha256:226dd78cf2461efa2f9a599e1b8b1ed79eca435feea772bd240860836aacf034 done
+#14 exporting manifest list sha256:06c9e5639db872f22357e5412498955bec91a74b97ae60d4f00ddae643f78047 done
+#14 pushing layers
+#14 ...
+ 
+#15 [auth] tfy-ws-5b-1-map-my-crop-5efba:pull,push tfy-ws-5b-1-mapmycrop-85yr2:pull token for tfyiitrazreg.azurecr.io
+#15 DONE 0.0s
+ 
+#14 exporting to image
+#14 pushing layers 1.3s done
+#14 pushing manifest for tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:6f45eb34fa29289f02ca54fa0f6a76e46286f8be-1@sha256:06c9e5639db872f22357e5412498955bec91a74b97ae60d4f00ddae643f78047
+#14 pushing manifest for tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:6f45eb34fa29289f02ca54fa0f6a76e46286f8be-1@sha256:06c9e5639db872f22357e5412498955bec91a74b97ae60d4f00ddae643f78047 1.4s done
+#14 pushing layers 0.3s done
+#14 pushing manifest for tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:6f45eb34fa29289f02ca54fa0f6a76e46286f8be-1@sha256:06c9e5639db872f22357e5412498955bec91a74b97ae60d4f00ddae643f78047 0.3s done
+#14 pushing layers 0.2s done
+#14 pushing manifest for tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:latest@sha256:06c9e5639db872f22357e5412498955bec91a74b97ae60d4f00ddae643f78047
+#14 pushing manifest for tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:latest@sha256:06c9e5639db872f22357e5412498955bec91a74b97ae60d4f00ddae643f78047 0.6s done
+#14 DONE 4.2s
+ 
+#16 exporting cache to registry
+#16 preparing build cache for export
+#16 writing layer sha256:0ebcc011f0ec7a9a900f7366b104730396a59032e64f04f3867a75f25ed48280 0.1s done
+#16 writing layer sha256:186ff0bd3b70c9f3a7b2bb4bf04283071022a0fcf9445604da846bd37b92e4ce 0.1s done
+#16 writing layer sha256:3da95a905ed546f99c4564407923a681757d89651a388ec3f1f5e9bf5ed0b39d
+#16 writing layer sha256:3da95a905ed546f99c4564407923a681757d89651a388ec3f1f5e9bf5ed0b39d 0.1s done
+#16 writing layer sha256:64b78282ca88b226c404cb8dfdee72b75eea52c9ac7380c0439b6e03992e483f 0.1s done
+#16 writing layer sha256:92d63ec5cbeb1348bad42929919fd8e78f38d96e388b5509d2929d76ddafb48e
+#16 writing layer sha256:92d63ec5cbeb1348bad42929919fd8e78f38d96e388b5509d2929d76ddafb48e 0.1s done
+#16 writing layer sha256:c3bd12861fc264cb0f74f7ac78561c2385f52660ae5a985ed15e907f1df61675 0.1s done
+#16 writing layer sha256:c8ae696e850feba6ac926e46a5d98f2cf57025be1b32eacf61b5e37d2e205832
+#16 writing layer sha256:c8ae696e850feba6ac926e46a5d98f2cf57025be1b32eacf61b5e37d2e205832 0.1s done
+#16 writing layer sha256:d40c2d342c04f7e7605f94525bb0a99ea0196aaa28637d0f19913fc0e8b0cfaa 0.1s done
+#16 writing config sha256:c9426990550ce4268524d82fa21b70a3f309a2fedf6334f6c5810e143a53c1bc
+#16 writing config sha256:c9426990550ce4268524d82fa21b70a3f309a2fedf6334f6c5810e143a53c1bc 0.4s done
+#16 writing cache image manifest sha256:12b82549434e284f3b63df1f27f3a845358ea901ecb7c81317194012f23a548f
+#16 preparing build cache for export 1.6s done
+#16 writing cache image manifest sha256:12b82549434e284f3b63df1f27f3a845358ea901ecb7c81317194012f23a548f 0.5s done
+#16 DONE 1.6s
+------
+> importing cache manifest from tfyiitrazreg.azurecr.io/tfy-ws-5b-1-map-my-crop-5efba:cache-latest:
+------
+Time taken to build the image: 10 seconds
+[==== Docker logs end ====]
+[Done] Docker image built and pushed
+Updating build status to SUCCEEDED
+Final payload: {
+  "status": "SUCCEEDED"
+}
+The build status has already been updated to SUCCEEDED
+Final payload: {
+  "tfyBuildMetadata": {
+    "timeTakenToBuildImageSeconds": 10,
+    "timeTakenToDownloadSourceCodeSeconds": 0,
+    "isGlobalBuilderUsed": true
+  }
+}
+Logging into registry: tfyiitrazreg.azurecr.io
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+ 
+Login Succeeded
+Checking if SOCI index should be built.
+Registry is tfyiitrazreg.azurecr.io
+Registry is not from ECR or JFrog. Skipping SOCI index creation.
+Provisioning node to build image... (This should usually take less than 30 seconds, but can take up to 2 minutes in case of high load.)
 
-## model training logs
 
 
 
-## model testing logs
+## model training logs 
+
+
+number of classes ==> 3
+train directory ==> /content/drive/MyDrive/Hackathon_Annam.AI/paddy sburnt train
+test directory ==> /content/drive/MyDrive/Hackathon_Annam.AI/paddy burnt test
+Image dimensions: 798 x 1248, Bands: 2, Type: U8
+Give Label to PaddyburntSig: 1
+Give Label to stubble_urban_sig: 0
+Give Label to stubble_road_sig: 2
+
+Assigned class labels:
+PaddyburntSig: 1
+stubble_urban_sig: 0
+stubble_road_sig: 2
+PaddyburntSig ==> 6 samples
+stubble_urban_sig ==> 19 samples
+stubble_road_sig ==> 9 samples
+Class imbalance ratio: 3.17
+WARNING: Significant class imbalance detected!
+
+Building model for input shape: [2, 1]
+Using simplified architecture for low-dimensional data
+
+Class weights: {np.int64(0): np.float64(0.5964912280701754), np.int64(1): np.float64(1.8888888888888888), np.int64(2): np.float64(1.2592592592592593)}
+Model: "sequential_18"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ conv1d_100 (Conv1D)             │ (None, 2, 32)          │            64 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ batch_normalization_58          │ (None, 2, 32)          │           128 │
+│ (BatchNormalization)            │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_82 (Dropout)            │ (None, 2, 32)          │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv1d_101 (Conv1D)             │ (None, 2, 64)          │         2,112 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ batch_normalization_59          │ (None, 2, 64)          │           256 │
+│ (BatchNormalization)            │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ max_pooling1d_25 (MaxPooling1D) │ (None, 1, 64)          │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_83 (Dropout)            │ (None, 1, 64)          │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv1d_102 (Conv1D)             │ (None, 1, 128)         │         8,320 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ batch_normalization_60          │ (None, 1, 128)         │           512 │
+│ (BatchNormalization)            │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ global_average_pooling1d_2      │ (None, 128)            │             0 │
+│ (GlobalAveragePooling1D)        │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_84 (Dropout)            │ (None, 128)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_58 (Dense)                │ (None, 64)             │         8,256 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_85 (Dropout)            │ (None, 64)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_59 (Dense)                │ (None, 32)             │         2,080 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_86 (Dropout)            │ (None, 32)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_60 (Dense)                │ (None, 3)              │            99 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 21,827 (85.26 KB)
+ Trainable params: 21,379 (83.51 KB)
+ Non-trainable params: 448 (1.75 KB)
+Epoch 1/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 3s 120ms/step - accuracy: 0.2412 - loss: 1.3983 - val_accuracy: 0.0000e+00 - val_loss: 1.1068
+Epoch 2/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.2764 - loss: 1.3873 - val_accuracy: 0.0000e+00 - val_loss: 1.1351
+Epoch 3/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.3375 - loss: 0.9849 - val_accuracy: 0.0000e+00 - val_loss: 1.1534
+Epoch 4/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.3940 - loss: 0.9631 - val_accuracy: 0.0000e+00 - val_loss: 1.1673
+Epoch 5/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.4569 - loss: 1.2155 - val_accuracy: 0.0000e+00 - val_loss: 1.1732
+Epoch 6/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 32ms/step - accuracy: 0.4954 - loss: 0.7126 - val_accuracy: 0.0000e+00 - val_loss: 1.1815
+Epoch 7/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.5560 - loss: 0.7327 - val_accuracy: 0.0000e+00 - val_loss: 1.1944
+Epoch 8/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - accuracy: 0.5222 - loss: 0.6224 - val_accuracy: 0.0000e+00 - val_loss: 1.2175
+Epoch 9/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - accuracy: 0.6000 - loss: 0.6411 - val_accuracy: 0.0000e+00 - val_loss: 1.2480
+Epoch 10/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - accuracy: 0.6287 - loss: 0.8723 - val_accuracy: 0.0000e+00 - val_loss: 1.2782
+Epoch 11/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 32ms/step - accuracy: 0.6981 - loss: 0.6320 - val_accuracy: 0.0000e+00 - val_loss: 1.3066
+Epoch 12/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - accuracy: 0.7380 - loss: 0.5393 - val_accuracy: 0.0000e+00 - val_loss: 1.3419
+Epoch 13/150
+...
+Epoch 149/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.9162 - loss: 0.3008 - val_accuracy: 0.0000e+00 - val_loss: 1.8886
+Epoch 150/150
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - accuracy: 0.7843 - loss: 0.4516 - val_accuracy: 0.0000e+00 - val_loss: 1.8923
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+Model saved as 'trained_model.h5'
+
+=== Classification Report on Training Data ===
+              precision    recall  f1-score   support
+
+     Class_0       0.68      1.00      0.81        19
+     Class_1       1.00      0.83      0.91         6
+     Class_2       0.00      0.00      0.00         9
+
+    accuracy                           0.71        34
+   macro avg       0.56      0.61      0.57        34
+weighted avg       0.56      0.71      0.61        34
+
+Cohen Kappa Score on Training Data: 0.41880341880341887
+
+=== Prediction Analysis ===
+Class 0: 19 actual, 28 predicted, 19 correct
+Class 1: 6 actual, 5 predicted, 5 correct
+Class 2: 9 actual, 1 predicted, 0 correct

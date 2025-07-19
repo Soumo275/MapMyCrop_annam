@@ -1,0 +1,49 @@
+{
+  "model_name": "MapMyCrop: Smart Acreage & Yield Estimation",
+  "version": "1.0",
+  "task": "Crop Acreage and Yield Estimation",
+  "model_type": "1D CNN",
+  "framework": "TensorFlow / Keras",
+  "description": "MapMyCrop is a two-stage system for smart crop monitoring. The first stage is a deep learning model using 1D CNN that estimates sown area and crop yield from satellite-derived time series indices. The second stage is a Java-based tool that integrates these predictions for user-friendly visualization, reporting, and further analysis.",
+  "input_data": {
+    "data_sources": ["Sentinel-2 Level-2A imagery","PlanetScope",  "MSAVI2", "Field survey data"],
+    "features_used": [
+      "time series",
+      "MSAVI2",
+      "Phenology temporal period"],
+    "temporal_resolution": ["5-day composites", "daily coverage"],
+    "spatial_resolution": ["10 meters", "3 meters"]
+  },
+  "output_data": {
+    "prediction_target": "Crop yield (tons/ha), sown area (hectares)",
+    "output_type": "Regression (Yield), Classification (Crop presence)",
+    "post_processing": "Predictions are passed to a Java-based estimator that integrates yield with acreage to generate spatial yield maps and region-wise summaries."
+  },
+  "metrics": {
+    "f1-score":["for paddy burnt: 0.91", "for moong in Narmadapuram: 0.57" ]
+  },
+  "training": {
+    "training_data_size": "n field samples from Study Site",
+    "validation_strategy": "70/30 train-test split",
+    "cross_validation": "3/5-fold",
+    "epochs": 150,
+    "batch_size": 32
+  },
+  "limitations": [
+    "Performance may vary under high cloud contamination or mixed cropping systems.",
+    "Limited size of imagery in terms of processing due to pixel-wise computation (width x height x channel)",
+    "Java tool currently supports only specific crop types and may require updating region-level parameters manually."
+  ],
+  "dataset": {
+    "name": "Ground-truth crop yield and acreage data from [Your Study Region]",
+    "source": "Field surveys, agricultural department",
+    "size": "Number of target crop plots",
+    "time_period": "2022–2024"
+  },
+  "deployment": {
+    "integration": "Java-based desktop application with GUI for spatial yield estimation and report generation",
+    "platform": "Windows (Java 8+)",
+    "dependencies": ["JavaFX", "Apache Commons Math", "TensorFlow SavedModel (for model I/O)"]
+  },
+  "author": "Group 5B"
+}
