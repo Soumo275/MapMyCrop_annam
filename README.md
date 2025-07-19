@@ -1,12 +1,18 @@
-# MapMyCrop_annam
-
 # MapMyCrop: Smart Acreage &amp; Yield Estimation
 
-A web application built with Flask that allows users to upload `.tiff` satellite images, generates thumbnails, performs deep learning inference using a `.h5` model, and stores result image URLs to Supabase.
+## Parts:
+
+### 1. [WebApp Description](#webapp-description)
+
+### 2. [Java Swing Tool](#java-swing-tool)
+
+# Webapp description
+
+A web application built with Flask that allows users to upload `.tiff` satellite images, generates thumbnails, and stores image URLs to Supabase.
 
 ---
 
-## Features
+## 1. WebApp Features
 
 - ✅ Upload `.tiff` satellite images
 - ✅ Generate thumbnails using Rasterio
@@ -17,7 +23,7 @@ A web application built with Flask that allows users to upload `.tiff` satellite
 
 ---
 
-## Tech Stack
+## Web app Tech Stack
 
 - **Backend:** Flask, SQLAlchemy, Supabase, Rasterio, NumPy
 - **ML/Inference:** Keras, TensorFlow
@@ -96,3 +102,44 @@ python app/app.py
 ```
 
 The app will be accessible at `http://localhost:5000/`.
+
+# 2. Java Swing Tool
+
+A standalone desktop application developed in **Java** for estimating agricultural yield based on user-supplied yield values and classified acreage data.
+
+## Overview
+
+This tool provides a simple and intuitive interface to:
+
+- Input classified area data (in binary format)
+- Enter user-supplied yield values
+- Estimate total yield based on area × yield
+- View and export results
+
+It is designed to assist in agricultural planning by processing structured input data to produce fast, offline yield calculations.
+
+---
+
+## Features
+
+- Built with **Java Swing** and **AWT**
+- Compatible with **binary input data** formats
+- Simple input/output interface
+- Fast and offline processing
+- Platform-independent — runs on any machine with Java installed
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Java JDK 8 or higher**  
+  Download: [Oracle Java](https://www.oracle.com/java/technologies/javase-downloads.html)
+
+### Running the Tool
+
+```bash
+javac CropYieldGUI.java
+java CropYieldGUI
+```
