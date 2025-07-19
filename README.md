@@ -2,11 +2,11 @@
 
 ## Parts:
 
-### 1. [WebApp Description](#1.-webapp-description)
+### 1. [WebApp Description](#1-webapp-description)
 
-### 2. [Java Swing Tool](#2.-java-swing-tool)
+### 2. [Java Swing Tool](#2-java-swing-tool)
 
-# Webapp description
+# 1 Webapp description
 
 A web application built with Flask that allows users to upload `.tiff` satellite images, generates thumbnails, and stores image URLs to Supabase.
 
@@ -103,7 +103,7 @@ python app/app.py
 
 The app will be accessible at `http://localhost:5000/`.
 
-# 2. Java Swing Tool
+# 2 Java Swing Tool
 
 A standalone desktop application developed in **Java** for estimating agricultural yield based on user-supplied yield values and classified acreage data.
 
