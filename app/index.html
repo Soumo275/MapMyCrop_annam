@@ -114,12 +114,14 @@ body {
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  z-index: 10;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);  
   position: relative;
   z-index: 1002; /* Higher than navbar */
-}
 
+  /* height: calc(100vh - 70px);  */
+  /* margin-top: 70px;*/
+  overflow-y: auto;           /*enables scroll */
+}
 
 .panel-header {
   margin-bottom: 20px;
@@ -320,6 +322,13 @@ body {
   align-items: center;
 }
 
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  line-height: 1.2;
+}
+
 .brand-text {
   font-size: 1.8rem;
   font-weight: 700;
@@ -327,10 +336,19 @@ body {
   text-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
   letter-spacing: 1px;
 }
+
+.brand-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #888;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
 .leaflet-control-container .leaflet-top.leaflet-left {
-  top: 80px !important; /* move controls below navbar */
+  top: 80px !important; 
   left: 10px !important;
-  z-index: 1001 !important; /* ensure they appear above map */
+  z-index: 1001 !important; 
 }
 
   </style>
@@ -343,7 +361,10 @@ body {
         <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
       </svg>
     </span>
-    <span class="brand-text">Map My Crop</span>
+    <div class="brand-text-group">
+      <span class="brand-text">Map My Crop</span>
+      <span class="brand-subtitle">Smart Acreage & Yield Estimation</span>
+    </div>
   </div>
 </nav>
 

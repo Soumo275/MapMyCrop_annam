@@ -1,0 +1,3 @@
+/docs/architecture.png: your main overall architecture block diagram
+/docs/cards/project-card.ipynb: your project card goes here. See later for details
+/docs/cards/ml-metrics.json: ML metrics. Use this file for metrics.

@@ -2,6 +2,14 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y \
+    gdal-bin \
+    libgdal-dev \
+    libexpat1 \
+    libexpat1-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
@@ -12,4 +20,4 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["python", "app.py"]
+CMD ["python", "app/app.py"]

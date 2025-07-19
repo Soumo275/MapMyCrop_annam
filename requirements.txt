@@ -8,4 +8,5 @@ numpy
 requests
 Pillow
 keras
+tensorflow
 psycopg2-binary
