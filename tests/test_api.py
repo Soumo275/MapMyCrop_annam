@@ -1,13 +1,13 @@
 import pytest
-from app import app  # Import your Flask app
+from app.app import app
 
 @pytest.fixture
 def client():
-    app.config['TESTING'] = True  # Enable testing mode
+    app.config['TESTING'] = True 
     with app.test_client() as client:
         yield client
 
-def test_hello_route(client):
-    response = client.get('/hello')
+def test_home(client):
+    response = client.get('/')
     assert response.status_code == 200
-    assert response.data.decode() == 'Hello, World!'
+    assert b'<title>GeoTIFF Upload & Map Viewer</title>' in response.data
