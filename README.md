@@ -10,6 +10,11 @@
 
 A web application built with Flask that allows users to upload `.tiff` satellite images, generates thumbnails, and stores image URLs to Supabase.
 
+### deployed link
+
+https://map-my-crop-ws-5b-1-8080.ml.iit-ropar.truefoundry.cloud/
+(if link is not working, relode / open the link once again )
+
 ---
 
 ## 1. WebApp Features
