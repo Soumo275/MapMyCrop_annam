@@ -6,6 +6,7 @@ supabase
 rasterio
 numpy
 requests
+pytest
 Pillow
 keras
 tensorflow
