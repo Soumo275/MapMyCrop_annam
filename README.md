@@ -6,14 +6,16 @@
 
 ### 2. [Java Swing Tool](#java-swing-tool)
 
+### 3. [Deep Learning to find Crop Acreage ](#deep-learning-to-find-crop-acreage)
+
 # Webapp description
 
 A web application built with Flask that allows users to upload `.tiff` satellite images, generates thumbnails, and stores image URLs to Supabase.
 
-### deployed link
+### deployed link in TrueFoundry
 
-https://map-my-crop-ws-5b-1-8080.ml.iit-ropar.truefoundry.cloud/
-(if link is not working, relode / open the link once again )
+https://map-my-crop-ws-5b-1-8080.ml.iit-ropar.truefoundry.cloud/ <br>
+(if link is not working, reload the site / open the link once again )
 
 ---
 
@@ -32,7 +34,7 @@ https://map-my-crop-ws-5b-1-8080.ml.iit-ropar.truefoundry.cloud/
 
 - **Backend:** Flask, SQLAlchemy, Supabase, Rasterio, NumPy
 - **ML/Inference:** Keras, TensorFlow
-- **Others:** GDAL, Docker, dotenv, Pillow
+- **Others:** Docker, dotenv, Pillow, GDAL
 - **Frontend:** HTML, CSS, Leaflet.js , OpenStreetMaps
 
 ## Installation & Setup
@@ -108,6 +110,7 @@ python app/app.py
 
 The app will be accessible at `http://localhost:5000/`.
 
+<br>
 # Java Swing Tool
 
 A standalone desktop application developed in **Java** for estimating agricultural yield based on user-supplied yield values and classified acreage data.
@@ -148,3 +151,91 @@ It is designed to assist in agricultural planning by processing structured input
 javac CropYieldGUI.java
 java CropYieldGUI
 ```
+
+<hr><br>
+
+# Deep Learning to find Crop Acreage
+
+A **Python** application for training and applying a deep learning model to classify hyperspectral/remote sensing `.bil` format data. It leverages **1D Convolutional Neural Networks** to detect target crops (like paddy) based on spectral signatures.
+
+## Overview
+
+This tool allows users to:
+
+- Read and process `.bil` + `.hdr` image files (ENVI format)
+- Train a **1D CNN** model on labeled pixel data
+- Automatically handle class imbalance and class weighting
+- Predict and generate classification maps
+- Export results in binary, HDR, and annotated image formats
+- Highlight areas of high model confidence (e.g., for paddy)
+
+Designed for agricultural remote sensing applications like crop classification from hyperspectral data.
+
+---
+
+## Features
+
+- Fully offline tool — works on local data only
+- Supports `.bil` + `.hdr` formats
+- Dynamic model built based on input dimensions
+- Class imbalance detection + weighted training
+- Custom visualization using `matplotlib` + `PIL`
+- Highlight target class (like paddy) with red mask
+- Saves predicted maps and confidence overlays
+
+---
+
+## Requirements
+
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Input Format
+
+#### Required Files
+
+- `.bil` file: Binary image data
+- `.hdr` file: ENVI metadata that defines the image's rows, columns, and bands
+
+These files must be paired — every `.bil` file must have a corresponding `.hdr` file with the same name.
+
+#### Example Directory Structure
+
+```
+train_data/
+├── paddy_sample1.bil
+├── paddy_sample1.hdr
+├── wheat_sample2.bil
+├── wheat_sample2.hdr
+
+test_data/
+├── test_image1.bil
+├── test_image1.hdr
+```
+
+Each `.bil` + `.hdr` pair represents a hyperspectral image. The training files must be labeled when prompted by the script.
+
+## Run the Notebook
+
+To test or run the model manually using Jupyter Notebook:
+
+1. Make sure you have all dependencies installed (via `requirements.txt`)
+
+2. Activate your virtual environment (if using one):
+
+   ```bash
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   ```
+
+3. Launch Jupyter Notebook:
+
+   ```bash
+   jupyter notebook
+   ```
+
+4. Open the desired `.ipynb` file (e.g., `predict_test_images.ipynb`)
+
+5. Run all cells to process the `.bil` and `.hdr` files and generate predictions.

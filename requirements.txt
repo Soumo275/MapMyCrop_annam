@@ -11,3 +11,4 @@ Pillow
 keras
 tensorflow
 psycopg2-binary
+gdal
