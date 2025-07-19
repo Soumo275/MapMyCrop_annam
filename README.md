@@ -2,9 +2,9 @@
 
 ## Parts:
 
-### 1. [WebApp Description](#webapp-description)
+### 1. [WebApp Description](#1.-webapp-description)
 
-### 2. [Java Swing Tool](#java-swing-tool)
+### 2. [Java Swing Tool](#2.-java-swing-tool)
 
 # Webapp description
 
