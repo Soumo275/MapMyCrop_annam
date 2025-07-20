@@ -112,7 +112,8 @@ The app will be accessible at `http://localhost:5000/`.
 
 <hr><br>
 
-# Java Acreage and Yield Estimation Tool
+<br>
+# Java Swing Tool
 
 A standalone desktop application developed in **Java** for estimating agricultural acreage and yield based on user-supplied yield values and classified acreage data.
 
