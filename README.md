@@ -10,7 +10,7 @@
 
 ### 3. [Deep Learning for Crop Acreage Mapping](#deep-learning-for-crop-acreage-mapping)
 
-### Full archotecture
+### Full architecture
 
 ![Full architecture](docs/architecture.png)
 
