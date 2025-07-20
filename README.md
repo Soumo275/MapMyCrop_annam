@@ -126,9 +126,9 @@ A standalone desktop application developed in **Java** for estimating agricultur
 
 This tool provides a simple and intuitive interface to:
 
-- Input classified area data (in binary format)
-- Enter user-supplied yield values
-- Estimate total acreage and yield based on total sample, and classified input image and yeld samples.
+- Input classified area image (in binary format) and header file
+- Enter user-supplied yield per pixel values along with corresponding row and column values
+- Estimate total acreage and yield based on the provided samples.
 - View and save results
 
 It is designed to assist in agricultural planning by processing structured input data to produce fast, offline acreage and yield calculations.
