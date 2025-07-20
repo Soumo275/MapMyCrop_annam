@@ -4,9 +4,9 @@
 
 ### 1. [WebApp Description](#webapp-description)
 
-### 2. [Java Swing Tool](#java-swing-tool)
+### 2. [Java Acreage and Yield Estimation Tool](#java-tool-for-crop-acreage-and-yield-estimation)
 
-### 3. [Deep Learning to find Crop Acreage ](#deep-learning-to-find-crop-acreage)
+### 3. [Deep Learning for Crop Acreage Mapping](#deep-learning-for-crop-acreage-mapping)
 
 # Webapp description
 
@@ -110,10 +110,11 @@ python app/app.py
 
 The app will be accessible at `http://localhost:5000/`.
 
-<br>
-# Java Swing Tool
+<hr><br>
 
-A standalone desktop application developed in **Java** for estimating agricultural yield based on user-supplied yield values and classified acreage data.
+# Java Acreage and Yield Estimation Tool
+
+A standalone desktop application developed in **Java** for estimating agricultural acreage and yield based on user-supplied yield values and classified acreage data.
 
 ## Overview
 
@@ -121,10 +122,10 @@ This tool provides a simple and intuitive interface to:
 
 - Input classified area data (in binary format)
 - Enter user-supplied yield values
-- Estimate total yield based on area × yield
-- View and export results
+- Estimate total acreage and yield based on total sample, and classified input image and yeld samples.
+- View and save results
 
-It is designed to assist in agricultural planning by processing structured input data to produce fast, offline yield calculations.
+It is designed to assist in agricultural planning by processing structured input data to produce fast, offline acreage and yield calculations.
 
 ---
 
@@ -154,9 +155,9 @@ java CropYieldGUI
 
 <hr><br>
 
-# Deep Learning to find Crop Acreage
+# Deep Learning for Crop Acreage Mapping
 
-A **Python** application for training and applying a deep learning model to classify hyperspectral/remote sensing `.bil` format data. It leverages **1D Convolutional Neural Networks** to detect target crops (like paddy) based on spectral signatures.
+A **Python** application for training and applying a deep learning model to classify multispectral temporal remote sensing `.bil` format data. It leverages **1D Convolutional Neural Networks** tested on specific crops (like paddy , wheat , grean pea and pulses) based on temporal indices values.
 
 ## Overview
 
@@ -166,12 +167,10 @@ This tool allows users to:
 - Train a **1D CNN** model on labeled pixel data
 - Automatically handle class imbalance and class weighting
 - Predict and generate classification maps
-- Export results in binary, HDR, and annotated image formats
-- Highlight areas of high model confidence (e.g., for paddy)
+- Saves results in binary, HDR, and annotated image formats
+- Highlight areas of high model confidence
 
-Designed for agricultural remote sensing applications like crop classification from hyperspectral data.
-
----
+Designed for agricultural remote sensing applications like crop classification from temporal multispectral images.
 
 ## Features
 
@@ -201,22 +200,6 @@ pip install -r requirements.txt
 - `.hdr` file: ENVI metadata that defines the image's rows, columns, and bands
 
 These files must be paired — every `.bil` file must have a corresponding `.hdr` file with the same name.
-
-#### Example Directory Structure
-
-```
-train_data/
-├── paddy_sample1.bil
-├── paddy_sample1.hdr
-├── wheat_sample2.bil
-├── wheat_sample2.hdr
-
-test_data/
-├── test_image1.bil
-├── test_image1.hdr
-```
-
-Each `.bil` + `.hdr` pair represents a hyperspectral image. The training files must be labeled when prompted by the script.
 
 ## Run the Notebook
 
