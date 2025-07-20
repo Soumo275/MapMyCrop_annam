@@ -10,6 +10,10 @@
 
 ### 3. [Deep Learning for Crop Acreage Mapping](#deep-learning-for-crop-acreage-mapping)
 
+### Full archotecture
+
+![Full architecture](docs/architecture.png)
+
 # Webapp description
 
 A web application built with Flask that allows users to upload `.tiff` satellite images, generates thumbnails, and stores image URLs to Supabase.
