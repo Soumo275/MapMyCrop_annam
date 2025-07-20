@@ -1,5 +1,7 @@
 # MapMyCrop: Smart Acreage &amp; Yield Estimation
 
+## Team 5B
+
 ## Parts:
 
 ### 1. [WebApp Description](#webapp-description)

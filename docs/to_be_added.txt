@@ -1,2 +1,0 @@
-/docs/architecture.png: your main overall architecture block diagram
-/docs/cards/project-card.ipynb: your project card goes here. See later for details
