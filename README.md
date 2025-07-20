@@ -157,7 +157,7 @@ java CropYieldGUI
 
 # Deep Learning for Crop Acreage Mapping
 
-A **Python** application for training and applying a deep learning model to classify multispectral temporal remote sensing `.bil` format data. It leverages **1D Convolutional Neural Networks** tested on specific crops (like paddy , wheat , grean pea and moong) based on temporal indices values.
+A **Python** application for training and applying a deep learning model to classify multispectral temporal remote sensing `.bil` format data. It leverages **1D Convolutional Neural Networks** tested on specific crops (like paddy , wheat , grean pea and moong pulses) based on temporal indices values.
 
 ## Overview
 
